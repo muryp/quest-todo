@@ -2,6 +2,7 @@
   "name": "@muryp/quest-todo",
   "private": true,
   "version": "0.0.1",
+  "type": "module",
   "scripts": {
     "build": "tsc && vite build",
     "dev": "vite",
@@ -11,7 +12,7 @@
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^1.4.0",
-    "@muryp/vite-html": "^1.0.0",
+    "@muryp/vite-html": "^1.0.1",
     "@storybook/addon-essentials": "^8.1.1",
     "@storybook/addon-interactions": "^8.1.1",
     "@storybook/addon-links": "^8.1.1",
@@ -30,6 +31,6 @@
     "storybook": "^8.1.1",
     "tailwindcss": "^3.4.3",
     "typescript": "^5.4.5",
-    "vite": "^5.2.0"
+    "vite": "^5.2.11"
   }
 }
