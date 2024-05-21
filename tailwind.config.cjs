@@ -19,7 +19,7 @@ module.exports = {
     themes: [
       {
         dark: {
-          ...themes['dark'],
+          ...themes['dracula'],
           // 'primary': '#4b5071',
           // 'secondary': '#282A36',
           // 'accent': '#5eead4',
