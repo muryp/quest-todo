@@ -14,6 +14,9 @@ importers:
       '@muryp/vite-html':
         specifier: ^1.0.1
         version: 1.0.1
+      '@storybook/addon-console':
+        specifier: ^3.0.0
+        version: 3.0.0(@storybook/addon-actions@8.1.1)(react@18.3.1)
       '@storybook/addon-essentials':
         specifier: ^8.1.1
         version: 8.1.1(@types/react@18.3.2)(prettier@3.2.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -1216,6 +1219,12 @@ packages:
 
   '@storybook/addon-backgrounds@8.1.1':
     resolution: {integrity: sha512-UFbKI3Ebsllg3DZIlVtYvp1nuLnBp85sKI98KnnYqiHCKWHDWlK7Li0Y1J2ab0w/Fx0grspC8WUgGId6NHrIrA==}
+
+  '@storybook/addon-console@3.0.0':
+    resolution: {integrity: sha512-2pD2c9KNWuPIWlprqmWoZYrNQnG2qoDg7fAAXXNK6YDc5x/ZpK0cfOyfz/Gpdeje4QUmttZKAVjH0nOZDuxfvw==}
+    peerDependencies:
+      '@storybook/addon-actions': '*'
+      react: '*'
 
   '@storybook/addon-controls@8.1.1':
     resolution: {integrity: sha512-KJXW/hjIWM+VLqqUAvdGIkX7hTDs8FtQOuUFSC/FPDqKveUoWz0hd+WaoT9HhNF8gyzFXYACoeb9XkQVVcDATA==}
@@ -5302,6 +5311,12 @@ snapshots:
       '@storybook/global': 5.0.0
       memoizerific: 1.11.3
       ts-dedent: 2.2.0
+
+  '@storybook/addon-console@3.0.0(@storybook/addon-actions@8.1.1)(react@18.3.1)':
+    dependencies:
+      '@storybook/addon-actions': 8.1.1
+      '@storybook/global': 5.0.0
+      react: 18.3.1
 
   '@storybook/addon-controls@8.1.1(@types/react@18.3.2)(prettier@3.2.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
