@@ -28,6 +28,7 @@ for (let i = 0; i < 20; i++) {
 
 const QUEST = LIST_QUEST[0]
 
-export type TPointQuest = keyof typeof QUEST.point
+export type TPoint = typeof QUEST.point
+export type TPointQuest = keyof TPoint
 export type TIdQuest = typeof QUEST.id
 export { LIST_QUEST }
