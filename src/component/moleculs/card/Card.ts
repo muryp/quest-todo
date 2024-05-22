@@ -1,9 +1,9 @@
-export interface Targs {
+export interface TArgsCard {
   title: string
   id: string
   point: number
 }
-export default ({ title, id, point }: Targs) => {
+export default ({ title, id, point }: TArgsCard) => {
   return html`
     <div class="card w-96 bg-base-300 shadow-xl my-5 mx-auto">
       <div class="p-6 flex items-center " val="${id}">

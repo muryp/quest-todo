@@ -1,5 +1,6 @@
+import Content from './Todo'
 import { LIST_QUEST } from '../../../mock/listQuest'
-import Content from './Card'
+import Card from '../../moleculs/card/Card'
 
 const args = {
   LIST_QUEST,
@@ -9,12 +10,12 @@ type Targs = typeof args
 export default {
   args,
   render: ({ LIST_QUEST, total }: Targs) => {
-    const CONTENT: string[] = []
+    const CardList: string[] = []
     for (let i = 0; i < total; i++) {
       const { title, id, point } = LIST_QUEST[i]
-      CONTENT.push(Content({ title, id, point: point.success }))
+      CardList.push(Card({ title, id, point: point.success }))
     }
-    return html`<div class="bg-base-100">${CONTENT.join('')}</div>`
+    return html`<div class="bg-base-100">${Content(CardList.join(''))}</div>`
   },
 }
-export const Card = {}
+export const Todo = {}
