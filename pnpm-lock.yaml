@@ -7,6 +7,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      dexie:
+        specifier: ^4.0.4
+        version: 4.0.4
     devDependencies:
       '@chromatic-com/storybook':
         specifier: ^1.4.0
@@ -2107,6 +2111,9 @@ packages:
     resolution: {integrity: sha512-CmnVc+Hek2egPx1PeTFVta2W78xy2K/9Rkf6cC4T59S50tVnzKj+tnx5mmx5lwvCkujZ4uRrpRSuV+IVs3f90Q==}
     engines: {node: '>= 4.0.0'}
     hasBin: true
+
+  dexie@4.0.4:
+    resolution: {integrity: sha512-wFzwWSUdi+MC3jiFeQcCp9nInR7EaX8edzYY+4wmiITkQAiSnHpe4Wo2o5Ce5tJZe2nqt7mLW91MsW4GYx3ziQ==}
 
   didyoumean@1.2.2:
     resolution: {integrity: sha512-gxtyfqMg7GKyhQmb056K7M3xszy/myH8w+B4RT+QXBQsvAOdc3XymqDDPHx1BgPgsdAA5SIifona89YtRATDzw==}
@@ -6661,6 +6668,8 @@ snapshots:
       debug: 4.3.4
     transitivePeerDependencies:
       - supports-color
+
+  dexie@4.0.4: {}
 
   didyoumean@1.2.2: {}
 

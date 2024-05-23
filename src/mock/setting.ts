@@ -1,9 +1,13 @@
-export default {
-  title: '',
+import { faker } from '@faker-js/faker'
+
+const stringCronJob = '0 0 0 * * *'
+const setting = {
+  title: faker.word.words(5),
   version: 'v1',
-  backup: {
-    auto: true,
-    cronjob: 'use time, daily/week/month',
-    lastBackup: Date.now(),
-  },
-}
+  autoBackup: true,
+  lastBackup: Date.now(),
+  timeBackup: stringCronJob,
+  theme: 'base',
+} as const
+export default setting
+export type TSetting = typeof setting

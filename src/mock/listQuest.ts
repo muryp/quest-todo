@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker'
-interface Tval {
+export interface TvalQuest {
   id: string // PK,UQ,AI
   title: string
   description: string
@@ -10,7 +10,7 @@ interface Tval {
     fail: number
   }
 }
-const LIST_QUEST: Tval[] = [] as const
+const LIST_QUEST: TvalQuest[] = [] as const
 
 for (let i = 0; i < 20; i++) {
   LIST_QUEST.push({
