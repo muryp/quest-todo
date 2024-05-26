@@ -1,11 +1,11 @@
 import { faker } from '@faker-js/faker'
 export interface TvalQuest {
-  id: string // PK,UQ,AI
+  id?: number // PK,UQ,AI
   title: string
   description: string
-  createdAt: Date
-  UpdatedAt: Date
-  point: {
+  createdAt?: number
+  UpdatedAt?: number
+  point?: {
     success: number
     fail: number
   }
@@ -14,11 +14,11 @@ const LIST_QUEST: TvalQuest[] = [] as const
 
 for (let i = 0; i < 20; i++) {
   LIST_QUEST.push({
-    id: faker.string.uuid(),
+    id: faker.number.int(),
     title: faker.word.words(5),
     description: faker.word.words(15),
-    createdAt: faker.date.past(),
-    UpdatedAt: faker.date.past(),
+    createdAt: faker.date.past().getTime(),
+    UpdatedAt: faker.date.past().getTime(),
     point: {
       success: faker.number.int({ max: 3, min: 1 }),
       fail: faker.number.int({ max: 15, min: 5 }),

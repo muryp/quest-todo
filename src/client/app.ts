@@ -1,23 +1,32 @@
+import layouts from '../component/layouts'
 import NotFound from '../component/pages/404'
 import routes from './routes'
 
-const getContent = () => {
+const getContent = async () => {
   const App = document.getElementById('app')!
-  const currentUrl = new URL(window.location.href).hash.replace(/^#/, '')
+  const currentUrl = new URL(window.location.href).hash
+    .replace(/\?.*/, '')
+    .replace(/^#/, '')
   const URLNOW = currentUrl === '' ? 'home' : currentUrl
 
   const CONTENT = routes[URLNOW as 'edit']
-  if (CONTENT !== undefined) {
-    App.innerHTML = CONTENT.render
-    const script = document.createElement('script')
-    script.src = CONTENT.script
-    script.type = 'module'
-    App.appendChild(script)
+  if (typeof CONTENT === 'string') {
+    App.innerHTML = CONTENT
     return
+  }
+  if (CONTENT !== undefined) {
+    App.innerHTML = layouts(CONTENT.render)
+    const fn = await CONTENT.script
+    if (fn) {
+      fn.default()
+      return
+    }
   }
   App.innerHTML = NotFound
 }
-getContent()
-window.onpopstate = () => {
-  getContent()
+await getContent()
+window.onpopstate = async () => {
+  const getEl = document.getElementById('app')!
+  getEl.innerHTML = 'loading...'
+  await getContent()
 }
