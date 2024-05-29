@@ -1,6 +1,6 @@
 import Dexie, { EntityTable } from 'dexie'
 import type { TvalHistory } from '../../mock/history'
-import { TvalQuest } from '../../mock/listQuest'
+import { TInputDbTodo } from '../../mock/listTodo'
 import { TvalReward } from '../../mock/reward'
 
 interface setting {
@@ -8,10 +8,10 @@ interface setting {
   theme: string
 }
 const db = new Dexie('TodoQuest') as Dexie & {
-  history: EntityTable<TvalHistory>;
-  quest: EntityTable<TvalQuest>;
-  reward: EntityTable<TvalReward>;
-  settings: EntityTable<setting>;
+  history: EntityTable<TvalHistory>
+  quest: EntityTable<TInputDbTodo>
+  reward: EntityTable<TvalReward>
+  settings: EntityTable<setting>
 }
 
 db.version(1).stores({

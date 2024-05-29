@@ -1,14 +1,16 @@
 import { faker } from '@faker-js/faker'
-export interface TvalQuest {
-  id?: number // PK,UQ,AI
+export interface TInputDbTodo {
   title: string
   description: string
   createdAt?: number
   UpdatedAt?: number
-  point?: {
+  point: {
     success: number
     fail: number
   }
+}
+export interface TvalQuest extends TInputDbTodo {
+  id?: number // PK,UQ,AI
 }
 const LIST_QUEST: TvalQuest[] = [] as const
 

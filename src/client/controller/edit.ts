@@ -1,7 +1,7 @@
 import form from '../../component/organisms/form'
 import NotFound from '../../component/pages/404'
-import { TvalQuest } from '../../mock/listQuest'
-import { get, put } from '../db/quest'
+import { TvalQuest } from '../../mock/listTodo'
+import { get, put } from '../db/todo'
 
 /**
 TODO: if success edit new todo,

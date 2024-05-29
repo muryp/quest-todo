@@ -1,6 +1,6 @@
-import { TvalQuest } from '../../mock/listQuest'
+import { TInputDbTodo } from '../../mock/listTodo'
 import notify from '../../utils/notify'
-import { add } from '../db/quest'
+import { add } from '../db/todo'
 
 /**
 TODO: if success adding new todo
@@ -17,7 +17,7 @@ export default function () {
           success: 0,
           fail: 0,
         },
-      } as TvalQuest
+      } as TInputDbTodo
       const getElParent = (ev.target as HTMLElement).parentElement
       const getInput = getElParent?.querySelectorAll('input')
       getInput?.forEach((el) => {

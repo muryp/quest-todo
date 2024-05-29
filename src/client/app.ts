@@ -24,7 +24,7 @@ const getContent = async () => {
   }
   App.innerHTML = NotFound
 }
-await getContent()
+getContent()
 window.onpopstate = async () => {
   const getEl = document.getElementById('app')!
   getEl.innerHTML = 'loading...'

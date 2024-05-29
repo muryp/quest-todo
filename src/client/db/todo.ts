@@ -1,7 +1,7 @@
 import db from './init'
-import type { TvalQuest } from '../../mock/listQuest'
+import type { TInputDbTodo, TvalQuest } from '../../mock/listTodo'
 
-export const add = async (data: TvalQuest) => {
+export const add = async (data: TInputDbTodo) => {
   return await db.quest.add(data)
 }
 export const total = async () => {

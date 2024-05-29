@@ -1,7 +1,12 @@
-import Card from '../../component/moleculs/card/Card'
+import Card from '../../component/organisms/Card/Todo'
 import notFound from '../../component/moleculs/notFound'
-import { total, list } from '../db/quest'
+import { total, list } from '../db/todo'
 
+/* TODO:
+ * search by title
+ * short by title
+ * short by date (default)
+ * */
 export default async () => {
   const List = document.getElementById('content')!
   const LoadMore = document.getElementById('loadmore')!

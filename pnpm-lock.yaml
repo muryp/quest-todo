@@ -19,8 +19,8 @@ importers:
         specifier: ^8.4.1
         version: 8.4.1
       '@muryp/vite-html':
-        specifier: ^1.0.1
-        version: 1.0.1
+        specifier: ^1.0.5
+        version: 1.0.5
       '@storybook/addon-console':
         specifier: ^3.0.0
         version: 3.0.0(@storybook/addon-actions@8.1.1)(react@18.3.1)
@@ -949,8 +949,8 @@ packages:
       '@types/react': '>=16'
       react: '>=16'
 
-  '@muryp/vite-html@1.0.1':
-    resolution: {integrity: sha512-ynomgnGCGES+aU3GnQHoV9seGetMM1phn3Ydkx05PBubYHYsYAlPuLO8nhVKWkqxlFmay/U9CCKV6aUQ8LnPrA==}
+  '@muryp/vite-html@1.0.5':
+    resolution: {integrity: sha512-ymXdXqNyf7xyPUVbN0ZpjALD0RFom9DvbvNeAGBmAoyFrqLFhjdIIqRjkwh9fjte3cNTGH7rBMYdte9R+Aojsg==}
     engines: {node: ^18.0.0 || >=20.0.0}
 
   '@ndelangen/get-tarball@3.0.9':
@@ -5083,7 +5083,7 @@ snapshots:
       '@types/react': 18.3.2
       react: 18.3.1
 
-  '@muryp/vite-html@1.0.1':
+  '@muryp/vite-html@1.0.5':
     dependencies:
       '@types/html-minifier-terser': 7.0.2
       clean-css: 5.3.3

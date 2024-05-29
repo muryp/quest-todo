@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker'
-import type { TPointQuest, TIdQuest } from './listQuest'
+import type { TPointQuest, TIdQuest } from './listTodo'
 export interface TvalHistory {
   id: number // PK,UQ,AI
   idTodo: TIdQuest

@@ -1,5 +1,5 @@
 import notify from '../../utils/notify'
-import { remove } from '../db/quest'
+import { remove } from '../db/todo'
 
 export default async function () {
   const id = new URL(window.location.href).hash.split(/\?id=/)[1]

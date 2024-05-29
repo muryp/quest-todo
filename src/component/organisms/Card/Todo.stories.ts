@@ -1,5 +1,5 @@
-import { LIST_QUEST } from '../../../mock/listQuest'
-import Content from './Card'
+import { LIST_QUEST } from '../../../mock/listTodo'
+import Todo from './Todo'
 
 const args = {
   LIST_QUEST,
@@ -11,8 +11,7 @@ export default {
   render: ({ LIST_QUEST, total }: Targs) => {
     const CONTENT: string[] = []
     for (let i = 0; i < total; i++) {
-      const { title, id, point } = LIST_QUEST[i]
-      CONTENT.push(Content({ title, id, point: point.success }))
+      CONTENT.push(Todo(LIST_QUEST[i]))
     }
     return html`<div class="bg-base-100">${CONTENT.join('')}</div>`
   },
