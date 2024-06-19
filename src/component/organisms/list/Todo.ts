@@ -1,9 +1,20 @@
+/* eslint-disable indent */
+import { ICON_ALERT } from '../../atoms/icon'
 import Search from '../../moleculs/Search'
 
 export default function (listTodo: string) {
+  listTodo =
+    listTodo === ''
+      ? listTodo
+      : html`
+          <div role="alert" class="alert">
+            ${ICON_ALERT}
+            <span>Your quest list is empty.</span>
+          </div>
+        `
   return html`
     ${Search}
-    <div id="content">${listTodo}</div>
+    <div id="content" class="my-3 p-3">${listTodo}</div>
     <div class="flex justify-center">
       <button
         type="btn"
