@@ -31,11 +31,15 @@ export default function () {
           }
           Data[el.name as 'title'] = title
         }
+        el.value = ''
       })
-      Data.description = getElParent!.querySelector('textarea')!.value
+      const ElDescription = getElParent!.querySelector('textarea')
+      Data.description = ElDescription!.value
+      ElDescription!.value = ''
       Data.createdAt = Date.now()
       Data.UpdatedAt = Date.now()
       await add(Data)
+      notify('success', 'Add Success!')
     } catch (err) {
       notify('err', err as string)
     }

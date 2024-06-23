@@ -2,22 +2,24 @@ import { ICON_DELETE, ICON_EDIT } from './../atoms/icon'
 import Btn from './../atoms/btn'
 import { TvalQuest } from '../../mock/listTodo'
 import Modals from './Modals'
+import Ask from './Ask'
+import Detail from './Detail'
 
 export default (Args: TvalQuest) => {
-  const href = (targer: string) => {
-    return `#${targer}?id=${Args.id}`
-  }
   const FooterTodo =
     Btn({
       TEXT: ICON_EDIT,
-      href: href('edit'),
+      href: `#edit?id=${Args.id}`,
       BtnName: ['todo', 'success'],
+      WIDTH: 'w-fit',
     }) +
-    Btn({
-      TEXT: ICON_DELETE,
-      href: href('delete'),
+    Modals({
       BtnName: ['todo', 'delete'],
+      TITLE: 'Delete',
+      id: String(Args.id),
+      ICON: ICON_DELETE,
+      BODY: Ask(String(Args.id)),
     }) +
-    Modals(Args)
+    Detail(Args)
   return FooterTodo
 }

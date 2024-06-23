@@ -1,5 +1,5 @@
 const classList = {
-  todo: 'btn mx-2 hover:btn-sm btn-xs w-fit link ',
+  todo: 'btn mx-2 hover:btn-sm btn-xs',
   null: '',
 }
 const className = {
@@ -7,14 +7,15 @@ const className = {
   delete: 'btn-error',
   second: 'btn-secondary',
 }
-interface TArgs {
+export interface TBtnArgs {
   href?: string
   onClick?: string
   BtnName: [keyof typeof classList, keyof typeof className]
   TEXT: string
+  WIDTH: 'w-fit' | 'w-full'
 }
-export default (Args: TArgs) => {
-  const myClass = classList[Args.BtnName[0]] + className[Args.BtnName[1]]
+export default (Args: TBtnArgs) => {
+  const myClass = `${classList[Args.BtnName[0]]} ${className[Args.BtnName[1]]} ${Args.WIDTH}`
   if (Args.href) {
     return html` <a class="${myClass}" href="${Args.href}">${Args.TEXT}</a> `
   }

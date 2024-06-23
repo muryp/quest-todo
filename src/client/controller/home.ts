@@ -16,7 +16,7 @@ export default async () => {
   const Render = async () => {
     const myDb = await list(TOTAL, offside)
     const isNoLoadMore = LEN_TABLE <= TOTAL
-    const isCurrHaveList = isNoLoadMore && LEN_TABLE - 5 === 0
+    const isCurrHaveList = isNoLoadMore && LEN_TABLE === 0
     if (isNoLoadMore) {
       LoadMore.remove()
     }

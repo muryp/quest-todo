@@ -1,24 +1,23 @@
-import { TvalQuest } from '../../mock/listTodo'
-import Btn from './../atoms/btn'
-import { ICON_DETAIL } from './../atoms/icon'
+import Btn, { TBtnArgs } from './../atoms/btn'
 
-export default ({ title, id, point, description }: TvalQuest) => {
-  const Description =
-    description !== ''
-      ? html`
-          <p class="bg-base-300 p-3 rounded-xl mt-3">
-            <b>Description:</b> ${description}
-          </p>
-        `
-      : ''
+interface TArgs {
+  id: string
+  BODY: string
+  ICON: string
+  TITLE: string
+  BtnName: TBtnArgs['BtnName']
+}
+export default ({ id, TITLE, BODY, ICON, BtnName }: TArgs) => {
+  const ElId = `my_modal_${TITLE + id}`
   const BtnToggle = Btn({
-    TEXT: `${ICON_DETAIL} Detail`,
-    onClick: `my_modal_3${id || ''}.showModal()`,
-    BtnName: ['todo', 'second'],
+    WIDTH: 'w-fit',
+    TEXT: `${ICON} ${TITLE}`,
+    onClick: `${ElId}.showModal()`,
+    BtnName,
   })
   return html`
     ${BtnToggle}
-    <dialog id="my_modal_3${id || ''}" class="modal">
+    <dialog id="${ElId}" class="modal">
       <div class="modal-box">
         <form method="dialog">
           <button
@@ -26,12 +25,7 @@ export default ({ title, id, point, description }: TvalQuest) => {
             X
           </button>
         </form>
-        <h3 class="font-bold text-lg">${title}</h3>
-        <ul>
-          <li>Point Success : ${point!.success}</li>
-          <li>Point fail : ${point!.fail}</li>
-        </ul>
-        ${Description}
+        ${BODY}
       </div>
     </dialog>
   `

@@ -7,10 +7,8 @@ export default (typeOf: TTypeOf, msg: string) => {
   const Notify = document.getElementById('notify')!
   const NotifyEl = document.createElement('div')
   NotifyEl.innerHTML = Alert[typeOf](msg)
-  console.log(NotifyEl)
   Notify.appendChild(NotifyEl)
   setTimeout(() => {
-    Notify.remove()
+    Notify.innerHTML = ''
   }, TIMEOUT)
-  window.location.href = '#'
 }
