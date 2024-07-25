@@ -15,7 +15,7 @@ export default function (listTodo: string) {
   return html`
     ${Search}
     <div id="content" class="my-3 p-3">${listTodo}</div>
-    <div class="flex justify-center">
+    <div class="flex justify-center mb-24">
       <button
         type="btn"
         id="loadmore"

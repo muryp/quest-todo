@@ -18,10 +18,10 @@ export default async (
   const List = document.getElementById('content')!
   const LoadMore = document.getElementById('loadmore')!
   let offset = 0
-  let TOTAL = 5
-  const Render = async () => {
-    const [myDb, LEN_TABLE] = await getList({ TOTAL, offset })
-    const isNoLoadMore = LEN_TABLE <= TOTAL
+  let total = 5
+  const Render = async (isLoadMore: boolean) => {
+    const [myDb, LEN_TABLE] = await getList({ TOTAL: total, offset })
+    const isNoLoadMore = LEN_TABLE <= total
     const isCurrHaveList = isNoLoadMore && LEN_TABLE === 0
     if (isNoLoadMore) {
       LoadMore.remove()
@@ -30,21 +30,23 @@ export default async (
       List.innerHTML = notFound
       return
     }
-    List.innerHTML =
-      List.innerHTML +
-      myDb
-        .map((val) => {
-          return Card(val)
-        })
-        .join('')
-    return
+    const component = myDb
+      .map((val) => {
+        return Card(val)
+      })
+      .join('')
+    if (isLoadMore) {
+      List.innerHTML = List.innerHTML + component
+    } else {
+      List.innerHTML = component
+    }
   }
-  Render()
+  Render(false)
   LoadMore.onclick = async (ev) => {
     ev.preventDefault()
     offset = offset + 5
-    TOTAL = TOTAL + 5
-    await Render()
+    total = total + 5
+    await Render(true)
   }
   searchOnType()
 }

@@ -44,7 +44,7 @@ export const search = async ({
 }): Promise<[TvalQuest[], number]> => {
   const rgTitle = new RegExp(title, 'i')
   const bassicQuery = db.quest
-    .orderBy(typeAccend)
+    .orderBy(typeAccend.toLowerCase())
     .filter((q) => rgTitle.test(q.title))
   const TOTAL_DB = await bassicQuery.count()
   if (isAccend) {
