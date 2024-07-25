@@ -29,7 +29,28 @@ export const put = async (data: TvalQuest) => {
   return await db.quest.put(data)
 }
 
-export const search = async (title: string) => {
+export const search = async ({
+  title,
+  offset,
+  isAccend,
+  typeAccend,
+  TOTAL,
+}: {
+  title: string
+  offset: number
+  isAccend: boolean
+  typeAccend: string
+  TOTAL: number
+}): Promise<[TvalQuest[], number]> => {
   const rgTitle = new RegExp(title, 'i')
-  return await db.quest.filter((q) => rgTitle.test(q.title)).toArray()
+  const bassicQuery = db.quest
+    .orderBy(typeAccend)
+    .filter((q) => rgTitle.test(q.title))
+  const TOTAL_DB = await bassicQuery.count()
+  if (isAccend) {
+    const list = await bassicQuery.limit(TOTAL).offset(offset).toArray()
+    return [list, TOTAL_DB]
+  }
+  const list = await bassicQuery.offset(offset).limit(TOTAL).reverse().toArray()
+  return [list, TOTAL_DB]
 }

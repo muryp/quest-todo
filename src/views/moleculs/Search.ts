@@ -7,6 +7,7 @@ export default html`
       <div>
         <div>
           <input
+            id="search-bar"
             class="input input-bordered join-item max-md:w-full"
             placeholder="Search" />
         </div>

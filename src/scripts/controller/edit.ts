@@ -1,5 +1,5 @@
-import form from '../../component/organisms/form'
-import NotFound from '../../component/pages/404'
+import form from '../../views/organisms/form'
+import NotFound from '../../views/pages/404'
 import { TvalQuest } from '../../mock/listTodo'
 import { get, put } from '../db/todo'
 

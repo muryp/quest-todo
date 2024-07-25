@@ -1,12 +1,12 @@
-import edit from '../component/pages/edit'
-import home from '../component/pages/home'
-import reward from '../component/pages/reward'
-import redeem from '../component/pages/redeem'
-import setting from '../component/pages/setting'
-import add from '../component/pages/add'
+import edit from '../views/pages/edit'
+import home from '../views/pages/home'
+import reward from '../views/pages/reward'
+import redeem from '../views/pages/redeem'
+import setting from '../views/pages/setting'
+import add from '../views/pages/add'
 
 const routes = {
-  home: { render: home, script: import('./controller/home') },
+  home: { render: home, script: import('./controller/home/home') },
   add: { render: add, script: import('./controller/add') },
   delete: { render: 'delete page', script: import('./controller/remove') },
   edit: { render: edit, script: import('./controller/edit') },

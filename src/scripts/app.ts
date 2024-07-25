@@ -1,5 +1,5 @@
-import layouts from '../component/layouts'
-import NotFound from '../component/pages/404'
+import layouts from '../views/layouts'
+import NotFound from '../views/pages/404'
 import routes from './routes'
 
 const getContent = async () => {

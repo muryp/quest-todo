@@ -1,20 +1,26 @@
-import Card from '../../component/organisms/Card/Todo'
-import notFound from '../../component/moleculs/notFound'
-import { total, list } from '../db/todo'
+import Card from '../../../views/organisms/Card/Todo'
+import notFound from '../../../views/moleculs/notFound'
+import searchOnType from './search'
+import type { TInputDbTodo } from '../../../mock/listTodo'
 
+interface TInputGetList {
+  TOTAL: number
+  offset: number
+}
 /* TODO:
  * search by title
  * short by title
  * short by date (default)
  * */
-export default async () => {
+export default async (
+  getList: (args: TInputGetList) => Promise<[TInputDbTodo[], number]>,
+) => {
   const List = document.getElementById('content')!
   const LoadMore = document.getElementById('loadmore')!
-  let offside = 0
+  let offset = 0
   let TOTAL = 5
-  const LEN_TABLE = await total()
   const Render = async () => {
-    const myDb = await list(TOTAL, offside)
+    const [myDb, LEN_TABLE] = await getList({ TOTAL, offset })
     const isNoLoadMore = LEN_TABLE <= TOTAL
     const isCurrHaveList = isNoLoadMore && LEN_TABLE === 0
     if (isNoLoadMore) {
@@ -36,8 +42,9 @@ export default async () => {
   Render()
   LoadMore.onclick = async (ev) => {
     ev.preventDefault()
-    offside = offside + 5
+    offset = offset + 5
     TOTAL = TOTAL + 5
     await Render()
   }
+  searchOnType()
 }
