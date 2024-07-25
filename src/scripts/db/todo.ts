@@ -43,14 +43,25 @@ export const search = async ({
   TOTAL: number
 }): Promise<[TvalQuest[], number]> => {
   const rgTitle = new RegExp(title, 'i')
-  const bassicQuery = db.quest
-    .orderBy(typeAccend.toLowerCase())
-    .filter((q) => rgTitle.test(q.title))
+  const bassicQuery = db.quest.filter((q) => rgTitle.test(q.title))
   const TOTAL_DB = await bassicQuery.count()
+  // const sortBy = bassicQuery.sortBy(typeAccend.toLowerCase())
   if (isAccend) {
-    const list = await bassicQuery.limit(TOTAL).offset(offset).toArray()
+    const list = await bassicQuery
+      .limit(TOTAL)
+      .offset(offset)
+      .sortBy(typeAccend.toLowerCase())
+    console.log(isAccend)
+    console.log(list)
     return [list, TOTAL_DB]
   }
-  const list = await bassicQuery.offset(offset).limit(TOTAL).reverse().toArray()
+  const list = await bassicQuery
+    .offset(offset)
+    .limit(TOTAL)
+    .reverse()
+    .sortBy(typeAccend.toLowerCase())
+  console.log(isAccend)
+  console.log(list)
+
   return [list, TOTAL_DB]
 }

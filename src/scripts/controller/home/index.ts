@@ -7,12 +7,7 @@ interface TInputGetList {
   TOTAL: number
   offset: number
 }
-/* TODO:
- * search by title
- * short by title
- * short by date (default)
- * */
-export default async (
+export const render = async (
   getList: (args: TInputGetList) => Promise<[TInputDbTodo[], number]>,
 ) => {
   const List = document.getElementById('content')!
@@ -48,5 +43,11 @@ export default async (
     total = total + 5
     await Render(true)
   }
+}
+
+export default async (
+  getList: (args: TInputGetList) => Promise<[TInputDbTodo[], number]>,
+) => {
+  render(getList)
   searchOnType()
 }

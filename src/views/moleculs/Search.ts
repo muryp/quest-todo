@@ -14,7 +14,9 @@ export default html`
       </div>
       ${SelectSearch}
       <div class="indicator">
-        <button class="btn btn-base join-item">${ICON_SEARCH}</button>
+        <button id="search-btn" class="btn btn-base join-item">
+          ${ICON_SEARCH}
+        </button>
       </div>
     </div>
     <a class="btn btn-success w-full my-3" href="#add"> Add Quest </a>
