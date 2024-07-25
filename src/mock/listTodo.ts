@@ -4,6 +4,7 @@ export interface TInputDbTodo {
   description: string
   createdAt?: number
   UpdatedAt?: number
+  isComplete?: 'true' | 'false'
   point: {
     success: number
     fail: number
@@ -21,6 +22,7 @@ for (let i = 0; i < 20; i++) {
     description: faker.word.words(15),
     createdAt: faker.date.past().getTime(),
     UpdatedAt: faker.date.past().getTime(),
+    isComplete: 'false',
     point: {
       success: faker.number.int({ max: 3, min: 1 }),
       fail: faker.number.int({ max: 15, min: 5 }),

@@ -1,5 +1,5 @@
-import {render} from '.'
 import debounce from '../../../utils/debounce'
+import render from '../../../utils/render'
 import { search } from '../../db/todo'
 
 export default function searchOnType() {
@@ -18,7 +18,7 @@ export default function searchOnType() {
     const typeAccend = ElSelectShort2.value
     render(async ({ TOTAL, offset }) => {
       return await search({ title, offset, isAccend, typeAccend, TOTAL })
-    })
+    }, false)
   }
 
   ELSearchBar.addEventListener('input', debounce(callback, 1000))

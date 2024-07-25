@@ -3,7 +3,7 @@ import { TvalQuest } from '../../../mock/listTodo'
 import Input from '../../atoms/input'
 
 export default (
-  { id, title, point, description }: TvalQuest,
+  { id, title, point, description, isComplete }: TvalQuest,
   type: 'update' | 'add',
 ) => {
   const DeleteTodo =
@@ -15,6 +15,7 @@ export default (
       ${Input('title', 'text', title)}
       ${Input('point.success', 'number', String(point?.success || ''))}
       ${Input('point.fail', 'number', String(point?.fail || ''))}
+      ${Input('isComplete', 'string', String(isComplete || ''))}
       <!--prettier-ignore-->
       <textarea
         class="textarea textarea-bordered h-24 w-full"

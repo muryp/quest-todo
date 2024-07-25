@@ -2,18 +2,17 @@
 import { ICON_ALERT } from '../../atoms/icon'
 import Search from '../../moleculs/Search'
 
-export default function (listTodo: string) {
+export default function (listTodo: string, isHome: boolean) {
   listTodo =
-    listTodo === ''
+    listTodo !== ''
       ? listTodo
       : html`
           <div role="alert" class="alert">
             ${ICON_ALERT}
-            <span>Your quest list is empty.</span>
+            <span>Your ${isHome ? '' : 'complete'} quest list is empty.</span>
           </div>
         `
-  return html`
-    ${Search}
+  let Content = html`
     <div id="content" class="my-3 p-3">${listTodo}</div>
     <div class="flex justify-center mb-24">
       <button
@@ -24,4 +23,8 @@ export default function (listTodo: string) {
       </button>
     </div>
   `
+  if (isHome) {
+    Content = Search + Content
+  }
+  return Content
 }

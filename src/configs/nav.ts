@@ -1,3 +1,5 @@
+import { ICON_COMPLETE } from '../views/atoms/icon'
+
 export default [
   {
     link: '',
@@ -5,9 +7,9 @@ export default [
     icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24"><path fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 19v-8.5a1 1 0 0 0-.4-.8l-7-5.25a1 1 0 0 0-1.2 0l-7 5.25a1 1 0 0 0-.4.8V19a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1z"/></svg>',
   },
   {
-    link: 'add',
-    title: 'Add',
-    icon: '<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 512 512"><path fill="currentColor" d="M93.1 325.8V139.6H46.5C20.9 139.6 0 160.5 0 186.2v279.3C0 491.1 20.9 512 46.5 512h279.3c25.7 0 46.5-20.9 46.5-46.5V419H186.2c-51.4-.1-93.1-41.8-93.1-93.2M465.5 0H186.2c-25.7 0-46.5 20.9-46.5 46.5v279.3c0 25.7 20.9 46.5 46.5 46.5h279.3c25.7 0 46.5-20.9 46.5-46.5V46.5C512 20.9 491.1 0 465.5 0m-23.3 209.5h-93.1v93.1h-46.5v-93.1h-93.1V163h93.1V69.8h46.5v93.1h93.1z"/></svg>',
+    link: 'complete-task',
+    title: 'Complete',
+    icon: ICON_COMPLETE,
   },
   //{
   //  link: 'edit',

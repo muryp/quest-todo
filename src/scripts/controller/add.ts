@@ -38,6 +38,7 @@ export default function () {
       ElDescription!.value = ''
       Data.createdAt = Date.now()
       Data.UpdatedAt = Date.now()
+      Data.isComplete = 'false'
       await add(Data)
       notify('success', 'Add Success!')
     } catch (err) {

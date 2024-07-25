@@ -4,7 +4,7 @@ const classList = {
 }
 const className = {
   success: 'btn-success',
-  delete: 'btn-error',
+  delete: 'btn-error text-white',
   second: 'btn-secondary',
 }
 export interface TBtnArgs {

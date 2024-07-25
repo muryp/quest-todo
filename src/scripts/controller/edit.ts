@@ -1,7 +1,7 @@
 import form from '../../views/organisms/form'
 import NotFound from '../../views/pages/404'
 import { TvalQuest } from '../../mock/listTodo'
-import { get, put } from '../db/todo'
+import { get, change } from '../db/todo'
 
 /**
 TODO: if success edit new todo,
@@ -41,7 +41,7 @@ export default async function () {
     })
     Data.description = getElParent!.querySelector('textarea')!.value
     Data.UpdatedAt = Date.now()
-    await put(Data)
+    await change(Data)
   }
   return
 }

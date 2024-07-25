@@ -16,7 +16,8 @@ const db = new Dexie('TodoQuest') as Dexie & {
 
 db.version(1).stores({
   history: '++id,idTodo,date,type,reward',
-  quest: '++id,title,description,createdAt,UpdatedAt,point.success,point.fail',
+  quest:
+    '++id,title,description,createdAt,UpdatedAt,point.success,point.fail,isComplete',
   reward: '++id,title,description,point,duration,qty,reset.byDate,reset.byTime',
   myReward: '++id,idreward,duration,qty',
   setting: 'title,theme,autoBackup,lastBackup,timeBackup',

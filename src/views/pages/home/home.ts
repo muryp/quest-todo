@@ -9,4 +9,4 @@ for (let i = 0; i < TOTAL; i++) {
   CONTENT.push(Card(LIST_QUEST[i]))
 }
 
-export default html` ${layouts(List(CONTENT.join('')))} `
+export default html` ${layouts(List(CONTENT.join(''), true))} `

@@ -3,8 +3,8 @@ const themes = require('daisyui/src/theming/themes')
 /* eslint-disable no-undef */
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  'content': ['./src/**/*.ts','./index.html'],
-  'theme': {
+  content: ['./src/**/*.ts', './index.html'],
+  theme: {
     extend: {
       fontFamily: {
         Lato: ['Lato', 'sans-serif'],
@@ -15,7 +15,7 @@ module.exports = {
       },
     },
   },
-  'daisyui': {
+  daisyui: {
     themes: [
       {
         dark: {
@@ -48,5 +48,5 @@ module.exports = {
     ],
   },
   // eslint-disable-next-line no-undef
-  'plugins': [require('daisyui')],
+  plugins: [require('daisyui')],
 }
