@@ -24,7 +24,7 @@ export default function (listTodo: string, isHome: boolean) {
     </div>
   `
   if (isHome) {
-    Content = Search + Content
+    Content = `<div id="total-point"></div>${ Search }${Content}`
   }
   return Content
 }

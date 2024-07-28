@@ -7,7 +7,7 @@ import type { TInputDbTodo, TvalQuest } from '../../mock/listTodo'
 export const add = async (data: TInputDbTodo) => {
   return await db.quest.add(data)
 }
-type TisComplete = 'true' | 'false'
+export type TisComplete = 'true' | 'false'
 export const total = async (isComplete: TisComplete) => {
   return await db.quest.where('isComplete').equals(isComplete).count()
 }

@@ -12,6 +12,7 @@ const db = new Dexie('TodoQuest') as Dexie & {
   quest: EntityTable<TInputDbTodo>
   reward: EntityTable<TvalReward>
   settings: EntityTable<setting>
+  point: EntityTable<{ id: number; point: number }>
 }
 
 db.version(1).stores({
@@ -21,6 +22,7 @@ db.version(1).stores({
   reward: '++id,title,description,point,duration,qty,reset.byDate,reset.byTime',
   myReward: '++id,idreward,duration,qty',
   setting: 'title,theme,autoBackup,lastBackup,timeBackup',
+  point: 'id,point',
 })
 
 export default db

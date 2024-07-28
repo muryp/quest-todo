@@ -16,7 +16,11 @@ const routes = {
   'setting': { render: setting, script: import('./controller/edit') },
   'complete': {
     render: 'complete...',
-    script: import('./controller/complete'),
+    script: import('./controller/changeStatus'),
+  },
+  'uncomplete': {
+    render: 'uncomplete...',
+    script: import('./controller/changeStatus'),
   },
   'complete-task': {
     render: complete,
