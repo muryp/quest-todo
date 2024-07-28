@@ -15,7 +15,7 @@ export default async (getList: getListFn, isComplete: boolean) => {
       LoadMore.remove()
     }
     if (isCurrHaveList) {
-      List.innerHTML = notFound
+      List.innerHTML = notFound(isComplete)
       return
     }
     const component = myDb
