@@ -1,4 +1,4 @@
-import notify from '../../utils/notify'
+import notify from '../utils/notify'
 import { remove } from '../db/todo'
 
 export default async function () {

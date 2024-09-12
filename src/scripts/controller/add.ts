@@ -1,5 +1,5 @@
 import { TInputDbTodo } from '../../mock/listTodo'
-import notify from '../../utils/notify'
+import notify from '../utils/notify'
 import { add } from '../db/todo'
 
 /**

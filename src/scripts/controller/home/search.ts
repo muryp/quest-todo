@@ -1,5 +1,5 @@
-import debounce from '../../../utils/debounce'
-import render from '../../../utils/render'
+import debounce from '../../utils/debounce'
+import render from '../../utils/render'
 import { search } from '../../db/todo'
 
 export default function searchOnType() {

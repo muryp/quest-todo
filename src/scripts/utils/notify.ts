@@ -1,4 +1,4 @@
-import Alert from '../views/atoms/alert'
+import Alert from '../../views/atoms/alert'
 
 type TTypeOf = keyof typeof Alert
 const TIMEOUT = 3000

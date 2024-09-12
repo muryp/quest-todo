@@ -1,4 +1,4 @@
-import notify from '../../utils/notify'
+import notify from '../utils/notify'
 import { modifePoint } from '../db/point'
 import { TisComplete, change, get } from '../db/todo'
 

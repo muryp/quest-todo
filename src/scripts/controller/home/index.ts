@@ -1,6 +1,6 @@
 import searchOnType from './search'
 import type { TInputDbTodo } from '../../../mock/listTodo'
-import render from '../../../utils/render'
+import render from '../../utils/render'
 import { totalPoint } from '../../db/point'
 import TotalPoint from '../../../views/moleculs/TotalPoint'
 

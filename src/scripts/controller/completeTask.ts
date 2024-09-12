@@ -1,4 +1,4 @@
-import render from '../../utils/render'
+import render from '../utils/render'
 import { list, total } from '../db/todo'
 import { getListFn } from './home'
 

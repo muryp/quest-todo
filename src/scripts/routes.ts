@@ -13,7 +13,7 @@ const routes = {
   'edit': { render: edit, script: import('./controller/edit') },
   'myreward': { render: reward, script: import('./controller/edit') },
   'redeem': { render: redeem, script: import('./controller/edit') },
-  'setting': { render: setting, script: import('./controller/edit') },
+  'setting': { render: setting, script: import('./controller/settings') },
   'complete': {
     render: 'complete...',
     script: import('./controller/changeStatus'),

@@ -1,6 +1,6 @@
-import { getListFn } from '../scripts/controller/home'
-import notFound from '../views/moleculs/notFound'
-import Card from '../views/organisms/Card/Todo'
+import { getListFn } from '../controller/home'
+import notFound from '../../views/moleculs/notFound'
+import Card from '../../views/organisms/Card/Todo'
 
 export default async (getList: getListFn, isComplete: boolean) => {
   const List = document.getElementById('content')!
