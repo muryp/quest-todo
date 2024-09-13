@@ -3,7 +3,7 @@ import AskUpload from '../../views/moleculs/AskUpload'
 import notify from '../utils/notify'
 import db from './init'
 
-const updateDb = async (data: { [key: string]: object }) => {
+export const updateDb = async (data: { [key: string]: object }) => {
   const ListDbName = Object.keys(data)
   for (let i = 0; i < ListDbName.length; i++) {
     const name = ListDbName[i]
