@@ -21,7 +21,7 @@ export default function ({ title, point, description, id, type }: Targs) {
         placeholder="description..."
         required>${description}</textarea>
       <button class="btn btn-success w-full" id="submit">${type}</button>
-      <a href="#redeem" class="btn btn-warning m-3">Back to Redeem</a>
+      <a href="#redeem/list" class="btn btn-warning m-3">Back to Redeem</a>
     </form>
   `
 }

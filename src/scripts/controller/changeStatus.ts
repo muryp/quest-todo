@@ -6,7 +6,7 @@ export default async function () {
   const getHash = window.location.href.split(/#/)[1]
   const [hash, id] = getHash.split('?id=')
   let isComplete: TisComplete
-  if (hash === 'complete') {
+  if (hash.split('/')[1] === 'complete') {
     isComplete = 'true'
   } else {
     isComplete = 'false'

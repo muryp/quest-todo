@@ -2,7 +2,7 @@
 import { ICON_ALERT } from '../../atoms/icon'
 
 export default html`
-  <a class="btn btn-success w-full my-3" href="#add-redeem">
+  <a class="btn btn-success w-full my-3" href="#redeem/add">
     Add Redeem items
   </a>
   <div id="main" class="my-3 p-3 [&>*]:my-6">

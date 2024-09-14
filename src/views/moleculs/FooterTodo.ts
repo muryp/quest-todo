@@ -10,7 +10,7 @@ export default (Args: TvalQuest, isComplete: boolean) => {
   if (!isComplete) {
     FooterTodo = Btn({
       TEXT: ICON_EDIT,
-      href: `#edit?id=${Args.id}`,
+      href: `#quest/edit?id=${Args.id}`,
       BtnName: ['todo', 'success'],
       WIDTH: 'w-fit',
     })
@@ -28,7 +28,7 @@ export default (Args: TvalQuest, isComplete: boolean) => {
       TEXT: `${ICON_COMPLETE} ${NAME_CHECKBOX}`,
       BtnName: ['todo', 'second'],
       WIDTH: 'w-fit',
-      href: `#${NAME_CHECKBOX}?id=${Args.id}`,
+      href: `#quest/${NAME_CHECKBOX}?id=${Args.id}`,
     }) +
     Detail(Args)
   return FooterTodo

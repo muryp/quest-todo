@@ -11,11 +11,12 @@ export default function () {
       const getElParent = (ev.target as HTMLElement).parentElement
       const getInput = getElParent?.querySelectorAll('input')
       getInput?.forEach((el) => {
-        const title = el.value
-        if (title.length <= 1) {
-          throw new Error('Error: title required')
+        const VAL = el.value
+        const NAME = el.name
+        if (VAL.length <= 1 && NAME === 'title') {
+          throw new Error('title required')
         }
-        Data[el.name as 'title'] = title
+        Data[NAME as 'title'] = VAL
       })
       const ElDescription = getElParent!.querySelector('textarea')
       Data.description = ElDescription!.value
