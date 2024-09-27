@@ -13,7 +13,7 @@ export default (Args: TvalRedeem) => {
   let FooterTodo = ''
   FooterTodo = Btn({
     TEXT: ICON_EDIT,
-    href: `#edit-redeem?id=${Args.id}`,
+    href: `#redeem/edit?id=${Args.id}`,
     BtnName: ['todo', 'success'],
     WIDTH: 'w-fit',
   })
@@ -35,8 +35,13 @@ export default (Args: TvalRedeem) => {
       id: String(Args.id),
       BODY: Args.description,
       ICON: ICON_DETAIL,
-      TITLE: 'Detail',
+      TITLE: 'Description',
       BtnName: ['todo', 'second'],
+    }) +
+    Btn({
+      TEXT: `${Args.point}`,
+      BtnName: ['todo', 'null'],
+      WIDTH: 'w-fit',
     })
 
   return FooterTodo

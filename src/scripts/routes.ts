@@ -6,6 +6,7 @@ import setting from '../views/pages/setting'
 import AddQuest from '../views/pages/add/quest'
 import AddRedeem from '../views/pages/add/redeem'
 import complete from '../views/pages/complete'
+import editRedeem from '../views/pages/redeem/edit'
 
 export type TRouteSub = {
   render: string
@@ -36,7 +37,7 @@ const routes: TRoute = {
       script: import('./controller/redeem/add'),
     },
     list: { render: redeem, script: import('./controller/redeem/list') },
-    edit: { render: redeem, script: import('./controller/redeem/list') },
+    edit: { render: editRedeem, script: import('./controller/redeem/edit') },
     delete: { render: redeem, script: import('./controller/redeem/list') },
   },
   delete: { render: 'delete page', script: import('./controller/remove') },

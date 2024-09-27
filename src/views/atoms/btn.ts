@@ -6,6 +6,7 @@ const className = {
   success: 'btn-success',
   delete: 'btn-error text-white',
   second: 'btn-secondary',
+  null: '',
 }
 export interface TBtnArgs {
   href?: string
