@@ -1,21 +1,55 @@
 import db from './init'
-import { TvalReward } from '../../mock/reward'
+import { modifePoint, totalPoint } from './point'
+import { get } from './redeem'
 
-export const create = async (data: TvalReward) => {
-  return await db.reward.add(data)
+export const buy = async (id: number) => {
+  const getOldData = await db.reward.get(id as never)
+  if (getOldData) {
+    const QTY = getOldData.qty
+    const getTotalPoint = await totalPoint()
+    if (getTotalPoint) {
+      const getInfoReward = await get(id)
+      if (getInfoReward) {
+        const PRICE = getInfoReward.point
+        await modifePoint(getTotalPoint - PRICE)
+        return await db.reward.put({ id: id as never, qty: QTY + 1 })
+      }
+    }
+  }
+  return await db.reward.put({ id: id as never, qty: 1 })
+}
+export const sell = async (id: number) => {
+  const getOldData = await db.reward.get(id as never)
+  if (getOldData) {
+    const QTY = getOldData.qty
+    if (QTY > 1) {
+      const getTotalPoint = await totalPoint()
+      if (getTotalPoint) {
+        const getInfoReward = await get(id)
+        if (getInfoReward) {
+          const PRICE = getInfoReward.point
+          await modifePoint(PRICE + getTotalPoint)
+          return await db.reward.put({ id: id as never, qty: QTY - 1 })
+        }
+      }
+    }
+  }
 }
 
-export const list = async (total: number) => {
-  return await db.reward.limit(total).toArray()
-}
-export const get = async (id: never) => {
-  return await db.reward.get(id)
+export const complete = async (id: number) => {
+  const getOldData = await db.reward.get(id as never)
+  if (getOldData) {
+    const QTY = getOldData.qty
+    if (QTY > 1) {
+      return await db.reward.put({ id: id as never, qty: QTY - 1 })
+    }
+  }
 }
 
-export const update = async (data: TvalReward) => {
-  return await db.reward.put(data)
+export const list = async (from: number, to: number) => {
+  const result = await db.reward.limit(to).offset(from).sortBy('UpdatedAt')
+  return result
 }
-
-export const remove = async (id: never) => {
-  return await db.reward.delete(id)
+export const total = async () => {
+  return await db.reward.count()
 }

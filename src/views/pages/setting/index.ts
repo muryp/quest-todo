@@ -1,7 +1,7 @@
 import { ICON_CLIPBOARD, ICON_DL } from '../../atoms/icon'
 
 export default html`
-  <div id="main-setting">
+  <div id="main-setting" class="inline-block w-full">
     <h2>Export</h2>
     <div class="m-3">
       <div id="export-dl" class="btn btn-info btn-sm m-3">
@@ -15,7 +15,7 @@ export default html`
     <div class="m-3">
       <form id="file-upload-form">
         <input type="file" class="file-input w-full max-w-xs" name="file" />
-        <button type="submit" class="btn btn-info btn-sm m-3 w-full">
+        <button type="submit" class="btn btn-info btn-sm m-3 w-11/12">
           Upload file
         </button>
       </form>
@@ -26,7 +26,7 @@ export default html`
       <div id="import-btn" class="btn btn-info btn-sm m-3">upload text</div>
     </div>
     <h2>Template</h2>
-    <div>list templete</div>
-    <div class="btn btn-info btn-sm m-3 w-full">add template</div>
+    <h3>list templete</h3>
+    <div class="btn btn-info btn-sm m-3 w-11/12">add template</div>
   </div>
 `

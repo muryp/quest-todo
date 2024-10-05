@@ -6,7 +6,7 @@ import {
 } from './../atoms/icon'
 import Btn from './../atoms/btn'
 import Modals from './Modals'
-import Ask from './Ask'
+import { rmRedeem } from './Ask'
 import { TvalRedeem } from '../../mock/redeem'
 
 export default (Args: TvalRedeem) => {
@@ -23,13 +23,13 @@ export default (Args: TvalRedeem) => {
       TITLE: '',
       id: String(Args.id),
       ICON: ICON_DELETE,
-      BODY: Ask(String(Args.id)),
+      BODY: rmRedeem(String(Args.id)),
     }) +
     Btn({
       TEXT: `${ICON_COMPLETE} buy`,
       BtnName: ['todo', 'second'],
       WIDTH: 'w-fit',
-      href: `#buy?id=${Args.id}`,
+      href: `#redeem/buy?id=${Args.id}`,
     }) +
     Modals({
       id: String(Args.id),

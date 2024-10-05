@@ -17,7 +17,7 @@ export default function (isComplete: boolean) {
         ${ICON}
         <span>you don't have task right now</span>
       </div>
-      <a href="#add" class="btn btn-success">Add new Task!</a>
+      <a href="#quest/add" class="btn btn-success">Add new Task!</a>
     </div>
   `
 }

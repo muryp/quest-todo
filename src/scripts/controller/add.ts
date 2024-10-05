@@ -20,6 +20,8 @@ export default function () {
       } as TInputDbTodo
       const getElParent = (ev.target as HTMLElement).parentElement
       const getInput = getElParent?.querySelectorAll('input')
+      // TODO: IScomplete
+      // TODO: if fail dont remove form
       getInput?.forEach((el) => {
         const NAME = el.name.split('.')
         if (NAME.length > 1) {

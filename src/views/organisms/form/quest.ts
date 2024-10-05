@@ -8,6 +8,8 @@ export default (
 ) => {
   const DeleteTodo =
     type == 'update' ? '<a href="#" class="btn btn-error m-3">Delete</a>' : ''
+  const isCheck = isComplete ? 'checked="checked"' : ''
+
   return html`
     <form
       class="md:m-auto p-3 leading-9 [&>*]:uppercase w-full"
@@ -15,7 +17,10 @@ export default (
       ${Input('title', 'text', title)}
       ${Input('point.success', 'number', String(point?.success || ''))}
       ${Input('point.fail', 'number', String(point?.fail || ''))}
-      ${Input('isComplete', 'string', String(isComplete || ''))}
+      <div>
+        isComplete :
+        <input name="isComplete" type="checkbox" class="toggle" ${isCheck} />
+      </div>
       <!--prettier-ignore-->
       <textarea
         class="textarea textarea-bordered h-24 w-full"

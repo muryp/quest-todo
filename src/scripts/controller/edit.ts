@@ -1,4 +1,4 @@
-import form from '../../views/organisms/form'
+import form from '../../views/organisms/form/quest'
 import NotFound from '../../views/pages/404'
 import { TvalQuest } from '../../mock/listTodo'
 import { get, change } from '../db/todo'

@@ -24,11 +24,15 @@ const routes: TRoute = {
     edit: { render: edit, script: import('./controller/edit') },
     uncomplete: {
       render: 'uncomplete...',
-      script: import('./controller/changeStatus'),
+      script: import('./controller/status/uncomplete'),
     },
     complete: {
       render: 'complete...',
-      script: import('./controller/changeStatus'),
+      script: import('./controller/status/complete'),
+    },
+    undoComplete: {
+      render: 'undo complete...',
+      script: import('./controller/status/undo'),
     },
   },
   redeem: {
@@ -39,9 +43,11 @@ const routes: TRoute = {
     list: { render: redeem, script: import('./controller/redeem/list') },
     edit: { render: editRedeem, script: import('./controller/redeem/edit') },
     delete: { render: redeem, script: import('./controller/redeem/list') },
+    buy: { render: '', script: import('./controller/redeem/buy') },
+    rm: { render: '', script: import('./controller/redeem/buy') },
   },
   delete: { render: 'delete page', script: import('./controller/remove') },
-  myreward: { render: reward, script: import('./controller/edit') },
+  myreward: { render: reward, script: import('./controller/reward/list') },
   setting: { render: setting, script: import('./controller/settings') },
 }
 

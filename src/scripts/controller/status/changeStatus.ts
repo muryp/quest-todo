@@ -1,6 +1,6 @@
-import notify from '../utils/notify'
-import { modifePoint } from '../db/point'
-import { TisComplete, change, get } from '../db/todo'
+import notify from '../../utils/notify'
+import { modifePoint } from '../../db/point'
+import { TisComplete, change, get } from '../../db/todo'
 
 export default async function () {
   const getHash = window.location.href.split(/#/)[1]
@@ -19,14 +19,14 @@ export default async function () {
     .then(async () => {
       const GET_INFO = await get(Number(id))
       let point: number
-      if (hash === 'complete') {
+      if (hash === 'quest/complete') {
         point = GET_INFO!.point.success
       } else {
         point = GET_INFO!.point.fail
       }
       await modifePoint(point)
         .then(() => {
-          window.location.href = '/#'
+          window.location.href = '/#quest/Listcomplete'
           notify('success', 'Success Complete Task!')
         })
         .catch((err) => {

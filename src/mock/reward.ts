@@ -1,4 +1,4 @@
 export interface TvalReward {
-  id: string // PK,UQ,AI
-  qty?: number
+  id: number // PK,UQ,AI
+  qty: number
 }

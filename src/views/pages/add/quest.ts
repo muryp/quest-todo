@@ -1,4 +1,4 @@
-import form from '../../organisms/form'
+import form from '../../organisms/form/quest'
 
 export default form(
   {
