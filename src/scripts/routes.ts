@@ -16,23 +16,29 @@ export type TRoute = { [key: string]: TRouteSub | TRoute }
 const routes: TRoute = {
   home: { render: home, script: import('./controller/home/home') },
   quest: {
-    Listcomplete: {
+    history: {
       render: complete,
-      script: import('./controller/completeList'),
+      script: import('./controller/history'),
     },
     add: { render: AddQuest, script: import('./controller/add') },
     edit: { render: edit, script: import('./controller/edit') },
-    uncomplete: {
-      render: 'uncomplete...',
-      script: import('./controller/status/uncomplete'),
+    fail: {
+      render: 'unsuccess...',
+      script: import('./controller/changeStatus'),
     },
     complete: {
       render: 'complete...',
-      script: import('./controller/status/complete'),
+      script: import('./controller/changeStatus'),
     },
-    undoComplete: {
-      render: 'undo complete...',
-      script: import('./controller/status/undo'),
+    undo: {
+      complete: {
+        render: 'undo complete...',
+        script: import('./controller/changeStatus'),
+      },
+      fail: {
+        render: 'success...',
+        script: import('./controller/changeStatus'),
+      },
     },
   },
   redeem: {

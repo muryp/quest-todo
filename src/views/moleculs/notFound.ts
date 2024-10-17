@@ -5,7 +5,7 @@ export default function (isComplete: boolean) {
     return html`
       <div class="w-1/2 m-auto">
         <div role="alert" class="alert">
-          <span>you don't have task complete right now</span>
+          <span>you don't have quest complete/uncomplete right now</span>
         </div>
         <a href="#" class="btn btn-success">Go to Home</a>
       </div>

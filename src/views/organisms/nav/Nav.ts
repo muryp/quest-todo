@@ -1,6 +1,7 @@
 import darkmode from './darkMode'
 import listHtml from './listHtml'
 
+// TODO: active nav (know user where is it)
 export default html`
   <nav
     class="fixed bottom-0 left-0 md:left-auto

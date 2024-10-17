@@ -20,7 +20,7 @@ const db = new Dexie('TodoQuest') as Dexie & {
 db.version(1).stores({
   history: '++id,idTodo,date,type,reward',
   quest:
-    '++id,title,description,createdAt,UpdatedAt,point.success,point.fail,isComplete',
+    '++id,title,description,createdAt,UpdatedAt,point.success,point.fail,isComplete,isFail',
   redeem: '++id,title,description,point,duration',
   reward: 'id,qty',
   myReward: '++id,idreward,duration,qty',

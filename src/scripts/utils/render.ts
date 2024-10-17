@@ -20,7 +20,7 @@ export default async (getList: getListFn, isComplete: boolean) => {
     }
     const component = myDb
       .map((val) => {
-        return Card(val, isComplete)
+        return Card(val, isComplete, val?.isFail === 'true' ? true : false)
       })
       .join('')
     if (isLoadMore) {
