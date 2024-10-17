@@ -9,16 +9,21 @@ async function render(currentPage: number) {
   const from = currentPage * MAX_PAGE - MAX_PAGE
   const to = MAX_PAGE * currentPage
   const ListReward = await list(from, to)
-  if (ListReward.length === 1) {
+  if (ListReward.length < 1) {
     return
   }
-  const newListEl = ListReward.map(async (val) => {
+  const ListEL: string[] = []
+  for (const val of ListReward) {
     const RedeemInfo = await get(val.id)
     if (RedeemInfo) {
-      return Card(RedeemInfo, val.qty)
+      ListEL.push(Card(RedeemInfo, val.qty))
     }
-  }).join('')
-  mainEl.innerHTML += newListEl
+  }
+  if (currentPage === 1) {
+    mainEl.innerHTML = ListEL.join('')
+  } else {
+    mainEl.innerHTML += ListEL.join('')
+  }
   const isHaveNewPage = (await total()) > currentPage * MAX_PAGE
   if (isHaveNewPage) {
     const loadMoreBtn = document.getElementById('loadmore')!
