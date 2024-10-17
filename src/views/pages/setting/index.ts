@@ -1,7 +1,18 @@
-import { ICON_CLIPBOARD, ICON_DL } from '../../atoms/icon'
+import { ICON_CLIPBOARD, ICON_DELETE, ICON_DL } from '../../atoms/icon'
+import { reset } from '../../moleculs/Ask'
+import Modals from '../../moleculs/Modals'
 
+const BtnReset = Modals({
+  BtnName: ['todo', 'delete'],
+  TITLE: 'Reset Data',
+  id: 'all',
+  ICON: ICON_DELETE,
+  BODY: reset(),
+})
 export default html`
   <div id="main-setting" class="inline-block w-full">
+    <h2>Reset Data</h2>
+    ${BtnReset}
     <h2>Export</h2>
     <div class="m-3">
       <div id="export-dl" class="btn btn-info btn-sm m-3">

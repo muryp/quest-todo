@@ -8,7 +8,7 @@ interface TArgs {
   BtnName: TBtnArgs['BtnName']
 }
 export default ({ id, TITLE, BODY, ICON, BtnName }: TArgs) => {
-  const ElId = `my_modal_${TITLE + id}`
+  const ElId = `my_modal_${TITLE.replace(/\s/gm, '_') + id}`
   const BtnToggle = Btn({
     WIDTH: 'w-fit',
     TEXT: `${ICON} ${TITLE}`,
