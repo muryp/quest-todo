@@ -1,6 +1,9 @@
 /* eslint-disable lit/attribute-value-entities */
 import { ICON_ALERT } from '../../atoms/icon'
 
+//TODO: complete reward
+//TODO: LIST REWARD
+//TODO: Timer reward
 export default html`
   <a class="btn btn-success w-full my-3" href="#redeem/list">
     Redeem items now

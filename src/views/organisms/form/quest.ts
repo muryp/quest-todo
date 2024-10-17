@@ -3,24 +3,21 @@ import { TvalQuest } from '../../../mock/listTodo'
 import Input from '../../atoms/input'
 
 export default (
-  { id, title, point, description, isComplete }: TvalQuest,
+  { id, title, point, description }: TvalQuest,
   type: 'update' | 'add',
 ) => {
   const DeleteTodo =
     type == 'update' ? '<a href="#" class="btn btn-error m-3">Delete</a>' : ''
-  const isCheck = isComplete ? 'checked="checked"' : ''
 
   return html`
     <form
       class="md:m-auto p-3 leading-9 [&>*]:uppercase w-full"
       id="${id || ''}">
       ${Input('title', 'text', title)}
-      ${Input('point.success', 'number', String(point?.success || ''))}
-      ${Input('point.fail', 'number', String(point?.fail || ''))}
-      <div>
-        isComplete :
-        <input name="isComplete" type="checkbox" class="toggle" ${isCheck} />
-      </div>
+      <h3>Point</h3>
+      success: ${Input('point.success', 'number', String(point?.success || ''))}
+      fail: ${Input('point.fail', 'number', String(point?.fail || ''))}
+      <h3>Description</h3>
       <!--prettier-ignore-->
       <textarea
         class="textarea textarea-bordered h-24 w-full"

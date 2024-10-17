@@ -2,6 +2,7 @@ import form from '../../views/organisms/form/quest'
 import NotFound from '../../views/pages/404'
 import { TvalQuest } from '../../mock/listTodo'
 import { get, change } from '../db/todo'
+import notify from '../utils/notify'
 
 /**
 TODO: if success edit new todo,
@@ -22,14 +23,13 @@ export default async function () {
   btnSave.onclick = async (ev) => {
     ev.preventDefault()
     const Data = {
-      id: 0,
+      id,
       point: {
         success: 0,
         fail: 0,
       },
     } as TvalQuest
     const getElParent = (ev.target as HTMLElement).parentElement!
-    Data.id = Number(getElParent.id)
     const getInput = getElParent?.querySelectorAll('input')
     getInput?.forEach((el) => {
       const NAME = el.name.split('.')
@@ -41,7 +41,13 @@ export default async function () {
     })
     Data.description = getElParent!.querySelector('textarea')!.value
     Data.UpdatedAt = Date.now()
-    await change(Data)
+    change(Data)
+      .then(() => {
+        notify('success', 'edit success...')
+      })
+      .catch((err) => {
+        notify('err', err)
+      })
   }
   return
 }
