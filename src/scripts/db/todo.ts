@@ -1,9 +1,6 @@
 import db from './init'
 import type { TInputDbTodo, TvalQuest } from '../../mock/listTodo'
 
-// TODO: clear complete task
-// TODO: add point if complete, reduce point for incomplete
-// TODO: total point
 export const add = async (data: TInputDbTodo) => {
   return await db.quest.add(data)
 }
