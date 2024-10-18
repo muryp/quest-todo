@@ -2,6 +2,8 @@ import { getListFn } from '../controller/home'
 import notFound from '../../views/moleculs/notFound'
 import Card from '../../views/organisms/Card/Todo'
 
+//TODO: REFACTOR THIS FUNCTION LIKE REWARD RENDER
+//TODO: merge in folder controller
 export default async (getList: getListFn, isComplete: boolean) => {
   const List = document.getElementById('content')!
   const LoadMore = document.getElementById('loadmore')!
@@ -24,7 +26,7 @@ export default async (getList: getListFn, isComplete: boolean) => {
       })
       .join('')
     if (isLoadMore) {
-      List.innerHTML = List.innerHTML + component
+      List.innerHTML += component
     } else {
       List.innerHTML = component
     }

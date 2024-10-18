@@ -2,6 +2,7 @@ import notify from '../utils/notify'
 import { modifePoint } from '../db/point'
 import { TisComplete, change, get } from '../db/todo'
 
+// TODO: after complete dont go to history
 export default async function () {
   const getHash = window.location.href.split(/#/)[1]
   const [hash, id] = getHash.split('?id=')

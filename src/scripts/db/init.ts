@@ -4,6 +4,7 @@ import { TInputDbTodo } from '../../mock/listTodo'
 import { TvalReward } from '../../mock/reward'
 import { TvalRedeem } from '../../mock/redeem'
 
+//TODO: change name reward and redeem
 interface setting {
   title: string
   theme: string

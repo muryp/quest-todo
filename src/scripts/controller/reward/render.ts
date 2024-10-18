@@ -2,12 +2,14 @@ import Card from '../../../views/organisms/Card/Reward'
 import { list, total } from '../../db/reward'
 import { get } from '../../db/redeem'
 
-const MAX_PAGE = 5
+const MAX_PER_PAGE = 5
 
+//TODO: create utils render like this( can use in list history, quest,  reward, redeem )
+//TODO: HAVE ARGS (pages, list, notfound, card)
 async function render(currentPage: number) {
   const mainEl = document.getElementById('main')!
-  const from = currentPage * MAX_PAGE - MAX_PAGE
-  const to = MAX_PAGE * currentPage
+  const from = currentPage * MAX_PER_PAGE - MAX_PER_PAGE
+  const to = MAX_PER_PAGE * currentPage
   const ListReward = await list(from, to)
   if (ListReward.length < 1) {
     return
@@ -24,7 +26,7 @@ async function render(currentPage: number) {
   } else {
     mainEl.innerHTML += ListEL.join('')
   }
-  const isHaveNewPage = (await total()) > currentPage * MAX_PAGE
+  const isHaveNewPage = (await total()) > currentPage * MAX_PER_PAGE
   if (isHaveNewPage) {
     const loadMoreBtn = document.getElementById('loadmore')!
     loadMoreBtn.innerHTML = html`

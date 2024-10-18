@@ -8,6 +8,7 @@ import AddRedeem from '../views/pages/add/redeem'
 import complete from '../views/pages/complete'
 import editRedeem from '../views/pages/redeem/edit'
 
+// TODO: change with muryp router
 export type TRouteSub = {
   render: string
   script: Promise<{ default: () => void }>
