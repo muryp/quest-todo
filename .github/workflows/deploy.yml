@@ -10,7 +10,6 @@ on:
       - "**/.vscode/**"
       - "**/package.json"
       - "**/*.d.ts"
-      - ".*"
 
 jobs:
   build:
