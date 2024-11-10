@@ -6,7 +6,6 @@ on:
       - 'main'
     paths-ignore:
       - "**/*.md"
-      - ".github/**/*"
       - "**/.vscode/**"
       - "**/package.json"
       - "**/*.d.ts"
