@@ -11,7 +11,7 @@ export const totalPoint = async () => {
   }
 }
 
-export const modifePoint = async (point: number) => {
+export const addPoint = async (point: number) => {
   if (await isDefine()) {
     const POINT_BEFORE = (await totalPoint()) as number
     const POINT_AFTER = POINT_BEFORE + point

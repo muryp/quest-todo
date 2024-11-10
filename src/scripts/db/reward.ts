@@ -1,5 +1,5 @@
 import db from './init'
-import { modifePoint, totalPoint } from './point'
+import { addPoint, totalPoint } from './point'
 import { get } from './redeem'
 
 export const buy = async (id: number) => {
@@ -11,7 +11,7 @@ export const buy = async (id: number) => {
   if (countPoint < 0) {
     throw 'not enough point'
   }
-  await modifePoint(-1 * PRICE)
+  await addPoint(-1 * PRICE)
 
   const getOldData = await db.reward.get(id as never)
   if (getOldData) {
@@ -23,28 +23,27 @@ export const buy = async (id: number) => {
 
 export const sell = async (id: number) => {
   const getOldData = await db.reward.get(id as never)
+
   if (getOldData) {
-    const QTY = getOldData.qty
-    if (QTY > 1) {
-      const getTotalPoint = await totalPoint()
-      if (getTotalPoint) {
-        const getInfoReward = await get(id)
-        if (getInfoReward) {
-          const PRICE = getInfoReward.point
-          await modifePoint(PRICE + getTotalPoint)
-          return await db.reward.put({ id: id as never, qty: QTY - 1 })
-        }
-      }
+    const OLD_QTY = Number(getOldData!.qty)
+    if (OLD_QTY === 1) {
+      await db.reward.delete(id as never)
+    } else {
+      await db.reward.put({ id: id as never, qty: OLD_QTY - 1 })
     }
+    const getDataRedeem = await db.redeem.get(id as never)
+    await addPoint(Number(getDataRedeem!.point))
   }
 }
 
-export const complete = async (id: number) => {
+export const use = async (id: number) => {
   const getOldData = await db.reward.get(id as never)
   if (getOldData) {
-    const QTY = getOldData.qty
-    if (QTY > 1) {
-      return await db.reward.put({ id: id as never, qty: QTY - 1 })
+    const OLD_QTY = getOldData.qty
+    if (OLD_QTY > 1) {
+      return await db.reward.put({ id: id as never, qty: OLD_QTY - 1 })
+    } else {
+      return await db.reward.delete(id as never)
     }
   }
 }

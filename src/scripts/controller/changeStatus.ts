@@ -1,5 +1,5 @@
 import notify from '../utils/notify'
-import { modifePoint } from '../db/point'
+import { addPoint } from '../db/point'
 import { TisComplete, change, get } from '../db/todo'
 
 // TODO: after complete dont go to history
@@ -50,7 +50,7 @@ export default async function () {
         MSG = 'fail status'
         HREF = '#quest/history'
       }
-      await modifePoint(point)
+      await addPoint(point)
         .then(() => {
           window.location.href = HREF
           notify('success', `Success ${MSG} Task!`)

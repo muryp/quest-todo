@@ -1,5 +1,6 @@
 import { ICON_COMPLETE } from '../views/atoms/icon'
 
+//TODO: `/list` diganti `/`
 export default [
   {
     link: '',
@@ -22,7 +23,7 @@ export default [
     icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24"  viewBox="0 0 24 24"><path fill="currentColor" d="M4 17v2h16v-2zM4 6h2.2q-.125-.225-.162-.475T6 5q0-1.25.875-2.125T9 2q.75 0 1.388.388t1.112.962L12 4l.5-.65q.45-.6 1.1-.975T15 2q1.25 0 2.125.875T18 5q0 .275-.038.525T17.8 6H20q.825 0 1.412.588T22 8v11q0 .825-.587 1.413T20 21H4q-.825 0-1.412-.587T2 19V8q0-.825.588-1.412T4 6m0 8h16V8h-5.1l2.1 2.85L15.4 12L12 7.4L8.6 12L7 10.85L9.05 8H4zm5-8q.425 0 .713-.288T10 5t-.288-.712T9 4t-.712.288T8 5t.288.713T9 6m6 0q.425 0 .713-.288T16 5t-.288-.712T15 4t-.712.288T14 5t.288.713T15 6"/></svg>',
   },
   {
-    link: 'myreward',
+    link: 'reward/list',
     title: 'My Reward',
     icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24"  viewBox="0 0 12 12"><path fill="currentColor" d="M2.25 1C1.56 1 1 1.56 1 2.25v1.162a1.5 1.5 0 0 0 .772 1.31l2.876 1.599a3 3 0 1 0 2.704 0l2.877-1.598A1.5 1.5 0 0 0 11 3.412V2.25C11 1.56 10.44 1 9.75 1zM5 5.372V2h2v3.372l-1 .556zM8 9a2 2 0 1 1-4 0a2 2 0 0 1 4 0"/></svg>',
   },

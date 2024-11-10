@@ -1,5 +1,5 @@
 import { TvalRedeem } from '../../../mock/redeem'
-import FooterRedeem from '../../moleculs/FooterRedeem'
+import FooterReward from '../../moleculs/FooterReward'
 
 export default (RedeemInfo: TvalRedeem, qty: number) => {
   const { title } = RedeemInfo
@@ -12,7 +12,9 @@ export default (RedeemInfo: TvalRedeem, qty: number) => {
           ${title}
         </h2>
       </div>
-      <div class="p-3 flex items-center">${FooterRedeem(RedeemInfo)}</div>
+      <div class="p-3 flex items-center">
+        ${FooterReward({ ...RedeemInfo, point: qty })}
+      </div>
     </div>
   `
 }

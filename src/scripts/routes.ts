@@ -9,6 +9,7 @@ import complete from '../views/pages/complete'
 import editRedeem from '../views/pages/redeem/edit'
 
 // TODO: change with muryp router
+// merge reward and use
 export type TRouteSub = {
   render: string
   script: Promise<{ default: () => void }>
@@ -54,7 +55,17 @@ const routes: TRoute = {
     rm: { render: '', script: import('./controller/redeem/buy') },
   },
   delete: { render: 'delete page', script: import('./controller/remove') },
-  myreward: { render: reward, script: import('./controller/reward/list') },
+  reward: {
+    list: { render: reward, script: import('./controller/reward/list') },
+    use: {
+      render: 'use',
+      script: import('./controller/reward/use'),
+    },
+    sell: {
+      render: 'use',
+      script: import('./controller/reward/sell'),
+    },
+  },
   setting: { render: setting, script: import('./controller/settings') },
 }
 
