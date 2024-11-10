@@ -2,7 +2,7 @@ import notify from '../utils/notify'
 import { addPoint } from '../db/point'
 import { TisComplete, change, get } from '../db/todo'
 
-// TODO: after complete dont go to history
+//TODO: delete all history todo complete
 export default async function () {
   const getHash = window.location.href.split(/#/)[1]
   const [hash, id] = getHash.split('?id=')
@@ -22,7 +22,7 @@ export default async function () {
     isFail = 'false'
   }
 
-  change({
+  await change({
     id: Number(id),
     UpdatedAt: Date.now(),
     isComplete,
@@ -32,27 +32,26 @@ export default async function () {
       const GET_INFO = await get(Number(id))
       let point: number
       let MSG = ''
-      let HREF = ''
-      if (hash === 'quest/complete') {
+      switch (hash) {
+      case 'quest/complete':
         point = GET_INFO!.point.success
         MSG = 'complete'
-        HREF = '#quest/history'
-      } else if (hash === 'quest/undo/complete') {
+        break
+      case 'quest/undo/complete':
         point = GET_INFO!.point.success * -1
         MSG = 'undo complete'
-        HREF = '#'
-      } else if (hash === 'quest/undo/fail') {
+        break
+      case 'quest/undo/fail':
         point = GET_INFO!.point.fail
         MSG = 'undo fail'
-        HREF = '#'
-      } else {
+        break
+      default:
         point = GET_INFO!.point.fail * -1
         MSG = 'fail status'
-        HREF = '#quest/history'
+        break
       }
       await addPoint(point)
         .then(() => {
-          window.location.href = HREF
           notify('success', `Success ${MSG} Task!`)
         })
         .catch((err) => {
@@ -64,5 +63,5 @@ export default async function () {
       const errMsg = String(err).replace('Error: ', '')
       notify('err', errMsg)
     })
-  return
+  return (window.location.href = '#')
 }
