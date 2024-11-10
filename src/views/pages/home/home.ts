@@ -6,7 +6,7 @@ import { LIST_QUEST } from '../../../mock/listTodo'
 const CONTENT: string[] = []
 const TOTAL = 5
 for (let i = 0; i < TOTAL; i++) {
-  CONTENT.push(Card(LIST_QUEST[i], false))
+  CONTENT.push(Card(LIST_QUEST[i], false,false))
 }
 
 export default html` ${layouts(List(CONTENT.join(''), true))} `

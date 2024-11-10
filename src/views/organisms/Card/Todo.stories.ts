@@ -11,7 +11,7 @@ export default {
   render: ({ LIST_QUEST, total }: Targs) => {
     const CONTENT: string[] = []
     for (let i = 0; i < total; i++) {
-      CONTENT.push(Todo(LIST_QUEST[i]))
+      CONTENT.push(Todo(LIST_QUEST[i],true,false))
     }
     return html`<div class="bg-base-100">${CONTENT.join('')}</div>`
   },
