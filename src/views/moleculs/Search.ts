@@ -19,6 +19,6 @@ export default html`
         </button>
       </div>
     </div>
-    <a class="btn btn-success w-full my-3" href="#add"> Add Quest </a>
+    <a class="btn btn-success w-full my-3" href="#quest/add"> Add Quest </a>
   </div>
 `

@@ -1,4 +1,8 @@
-import { add } from '../scripts/db/todo'
+import { updateDb } from '../scripts/db/import'
 import { LIST_QUEST } from './listTodo'
+import ListRedeem from './redeem'
 
-LIST_QUEST.forEach((data) => add(data))
+updateDb({
+  quest: LIST_QUEST,
+  redeem: ListRedeem,
+})

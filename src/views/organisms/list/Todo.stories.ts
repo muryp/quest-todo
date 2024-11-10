@@ -12,9 +12,9 @@ export default {
   render: ({ LIST_QUEST, total }: Targs) => {
     const CardList: string[] = []
     for (let i = 0; i < total; i++) {
-      CardList.push(Card(LIST_QUEST[i]))
+      CardList.push(Card(LIST_QUEST[i],true,false))
     }
-    return html`<div class="bg-base-100">${Content(CardList.join(''))}</div>`
+    return html`<div class="bg-base-100">${Content(CardList.join(''),true)}</div>`
   },
 }
 export const Todo = {}
