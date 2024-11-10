@@ -12,7 +12,7 @@ export default (Args: TvalQuest, isComplete: boolean, isFail: boolean) => {
           ${title}
         </h2>
       </div>
-      <div class="p-3 w-full" val="${id || ''}">
+      <div class="p-3 flex items-center flex-wrap gap-y-3" val="${id || ''}">
         ${FooterTodo(Args, isComplete, isFail)}
       </div>
     </div>

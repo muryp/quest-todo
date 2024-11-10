@@ -4,7 +4,7 @@ import FooterRedeem from '../../moleculs/FooterRedeem'
 export default (Args: TvalRedeem) => {
   const { title, id } = Args
   return html`
-    <div class="card w-96 bg-base-300 shadow-xl my-5 mx-auto">
+    <div class="card w-96 bg-base-300 shadow-xl my-5 mx-auto max-w-full">
       <div class="p-6 flex items-center " val="${id || ''}">
         <h2
           class="font-Lato font-bold uppercase whitespace-nowrap
